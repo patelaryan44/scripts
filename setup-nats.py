@@ -1,4 +1,8 @@
 import os
+import subprocess
+import sys
+
+subprocess.run(['dnf', 'install', 'git'], check=True)
 
 # Define the directories and files
 dir_path = "/etc/eventflux/conf"

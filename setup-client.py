@@ -2,6 +2,10 @@ import os
 import subprocess
 import sys
 
+
+subprocess.run(['dnf', 'install', 'git'], check=True)
+
+
 # Install required Python packages
 def install_packages():
     try:
