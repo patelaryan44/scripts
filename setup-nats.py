@@ -16,7 +16,7 @@ nats_conf_content = '''{
     {
       "forward_config_key": "natsconfig1",
       "uri": "nats://192.168.40.20:4222",
-      "topic": "your_topic",
+      "topic": "weather",
       "eventEnable": true
     },
     {
