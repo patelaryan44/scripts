@@ -2,30 +2,11 @@ import os
 import subprocess
 import sys
 
-# Check if Python is installed
-def check_python():
-    try:
-        subprocess.run(['python3', '--version'], check=True)
-    except subprocess.CalledProcessError:
-        print("Python is not installed. Please install Python 3.")
-        sys.exit(1)
-
-# Check if pip is installed, and install it if not
-def check_pip():
-    try:
-        subprocess.run(['pip3', '--version'], check=True)
-    except subprocess.CalledProcessError:
-        print("pip is not installed. Installing pip...")
-        try:
-            subprocess.run(['dnf', 'install', '-y', 'python3-pip'], check=True)
-        except subprocess.CalledProcessError:
-            print("Failed to install pip. Please install it manually.")
-            sys.exit(1)
-
 # Install required Python packages
 def install_packages():
     try:
-        subprocess.run(['pip3', 'install', 'nats-py'], check=True)
+        subprocess.run(['dnf', 'install', 'pip'], check=True)
+        subprocess.run(['pip', 'install', 'nats-py'], check=True)
     except subprocess.CalledProcessError:
         print("Failed to install required packages. Please install them manually.")
         sys.exit(1)
@@ -71,10 +52,6 @@ with open(file_path, 'w') as file:
     file.write(nats_client_content)
 
 print(f'{file_name} has been created in {directory}')
-
-# Check and install Python and pip if needed
-check_python()
-check_pip()
 
 # Install required Python packages
 install_packages()
