@@ -14,7 +14,7 @@ usr_local_bin_path = "/usr/local/bin"
 continuous_file = os.path.join(usr_local_bin_path, "continuous.conf")
 run_script_file = os.path.join(usr_local_bin_path, "run_eventflux.sh")
 
-# Define the content for nats.conf
+# Define the content for nats.conf ez
 nats_conf_content = '''{
   "configs": [
     {
