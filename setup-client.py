@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 
-# Install required Python packages
+# Install required Python packages for DNF
 def install_packages():
     try:
         subprocess.run(['dnf', 'install', 'pip'], check=True)
